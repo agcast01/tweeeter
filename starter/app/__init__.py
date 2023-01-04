@@ -12,3 +12,8 @@ app.config.from_object(Config)
 def home():
     tweet = choice(tweets)
     return render_template('index.html', tweet=tweet)
+
+
+@app.route('/feed')
+def feed():
+    return render_template('feed.html', tweets=tweets)
